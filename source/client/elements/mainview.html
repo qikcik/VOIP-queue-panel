@@ -1,0 +1,43 @@
+<style>
+    main {
+        padding: 0px;
+        margin: 0px;
+
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+    }
+
+    nav {
+      background-color: #333;
+      min-width: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+    }
+
+    button {
+      display: block;
+    }
+
+    section {
+      padding: 0px;
+      height: 100vh;
+      flex-grow: 1;
+
+      overflow-y: scroll;
+    }
+
+  </style>
+  <main>
+    <nav>
+      <button> Klik </button>
+      <button> Klik2 </button>
+    </nav>
+    <section>
+      <slot name="view"></slot>
+    </section>
+  </main>
