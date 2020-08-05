@@ -37,7 +37,7 @@ export default class WebServer
             const session = new Session(socket,this);
             this.sessions.push(session);
 
-            await session.aInit("default");
+            await session.aInit("authorization");
 
             socket.on('disconnect',async () => 
             {

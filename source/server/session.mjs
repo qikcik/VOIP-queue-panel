@@ -12,6 +12,8 @@ export default class Session
         this.id = socket.id;
         this.webServer = webServer;
 
+        this.context = {}
+
         this.presenters = [];
 
         this.socket.on("module-hello", (msg) =>

@@ -13,7 +13,6 @@ export default class ChatService extends serviceBase
     {
         super(module);
 
-        this.handler = new EventEmitter();
         this.messages = [];
     }
 

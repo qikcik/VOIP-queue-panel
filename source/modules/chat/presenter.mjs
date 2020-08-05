@@ -29,7 +29,8 @@ export default class ChatPresenter extends PresenterBase
 
     async aReceiveHello(hello)
     {
-        this.who = hello;
+        //console.log(this.session.context);
+        this.who = this.session.context.fullname;
         this.sendEvent({type: "update", msgs: this.service.messages });
     }
 

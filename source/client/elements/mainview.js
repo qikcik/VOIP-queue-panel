@@ -29,11 +29,15 @@ customElements.define('main-view',class MainView extends HTMLElement
             element.style.display = "none";
         });
 
-        this.changeActive(views[0]);
+        if(views.length > 0)
+            this.changeActive(views[views.length-1]);
     }
 
     changeActive(newElement)
     {
+        if(this.activeElement) this.shadowRoot.querySelector(`#btn-${this.activeElement.tagName}`).classList.remove('--selected');
+        this.shadowRoot.querySelector(`#btn-${newElement.tagName}`).classList.add('--selected');
+
         if(this.activeElement) this.activeElement.style.display = "none";
         this.activeElement = newElement;
         newElement.style.display = "block";
